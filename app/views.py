@@ -13,7 +13,7 @@ def index():
     form = ProductForm()
     r = http.request('GET', 'http://172.16.173.128:30261/product/1')
     print(r.data)
-    parsed_json = json.loads(r.data)
+    parsed_json = json.loads(r.get_data(as_text=True))
     prod = Product(parsed_json['id'], parsed_json['name'])
     prod.toString()
     inventory.append(prod)
