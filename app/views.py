@@ -15,9 +15,9 @@ def index():
 
     inventory = []
 
-    r = http.request('GET', 'http://productsrv:8080/product/')
+    #r = http.request('GET', 'http://productsrv:8080/product/')
     r = http.request('GET', 'http://productv3:8080/product/')
-    #r = http.request('GET', 'http://productv3-prod-services.172.16.173.128.nip.io/product/')
+    r = http.request('GET', 'http://productv3-prod-services.172.16.173.128.nip.io/product/')
     print(r.data)
 
     parsed_json = json.loads(r.data.decode("utf-8"))
