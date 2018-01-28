@@ -11,7 +11,7 @@ http = urllib3.PoolManager()
 @app.route('/products', methods=['GET', 'POST'])
 def index():
     form = ProductForm()
-    r = http.request('GET', 'http://172.16.173.128:30261/product/1')
+    r = http.request('GET', 'http://product/product/1')
     print(r.data)
     parsed_json = json.loads(r.data.decode("utf-8"))
     prod = Product(parsed_json['id'], parsed_json['name'])
