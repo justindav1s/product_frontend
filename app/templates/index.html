@@ -1,0 +1,15 @@
+{% block content %}
+<h1>Inventory Manager</h1>
+    {% for prod in inventory %}
+<div><p><b>{{ prod.id }}</b> : {{ prod.name }}</b></p></div>
+    {% endfor %}
+<form action="" method="post" name="index">
+    {{ form.hidden_tag() }}
+    <p>
+        add a new product<br>
+        {{ form.id(size=5) }}
+        {{ form.name(size=20) }}
+    </p>
+    <p><input type="submit" value="Add"></p>
+</form>
+{% endblock %}
