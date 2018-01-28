@@ -8,10 +8,10 @@ from .model import Product
 inventory = []
 http = urllib3.PoolManager()
 
-@app.route('/products', methods=['GET', 'POST'])
+@app.route('/inventory', methods=['GET', 'POST'])
 def index():
     form = ProductForm()
-    r = http.request('GET', 'http://product:8080/product/1')
+    r = http.request('GET', 'http://productsrvv1:8080/product/1')
     print(r.data)
     parsed_json = json.loads(r.data.decode("utf-8"))
     prod = Product(parsed_json['id'], parsed_json['name'])
@@ -24,7 +24,7 @@ def index():
         flash('Product name=%s' % (form.name.data))
         prod = Product(form.id.data, form.name.data)
         inventory.append(prod)
-        return redirect('/products')
+        return redirect('/inventory')
     return render_template("index.html",
                            title='Inventory Manager',
                            form=form,
