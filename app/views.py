@@ -8,6 +8,10 @@ from .model import Product
 inventory = []
 http = urllib3.PoolManager()
 
+@app.route('/', methods=['GET'])
+def health():
+    return render_template("health.html")
+
 @app.route('/inventory', methods=['GET', 'POST'])
 def index():
 
