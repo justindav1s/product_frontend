@@ -8,7 +8,15 @@ futures==3.1.1
 get==0.0.39
 html5lib==0.9999999
 itsdangerous==0.24
+Jinja2==2.10
+Markdown==2.6.11
+MarkupSafe==1.0
+Pillow==5.0.0
 post==0.0.26
+public==0.0.65
+query-string==0.0.28
+request==0.0.26
 urllib3==1.22
+urlopen==1.0.0
 Werkzeug==0.14.1
 WTForms==2.1
