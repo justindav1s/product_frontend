@@ -10,13 +10,21 @@ http = urllib3.PoolManager()
 
 @app.route('/inventory', methods=['GET', 'POST'])
 def index():
+
     form = ProductForm()
-    r = http.request('GET', 'http://productsrv:8080/product/1')
+
+    inventory = []
+
+    r = http.request('GET', 'http://productsrv:8080/product/')
+    #r = http.request('GET', 'http://productv3-prod-services.172.16.173.128.nip.io/product/')
     print(r.data)
+
     parsed_json = json.loads(r.data.decode("utf-8"))
-    prod = Product(parsed_json['id'], parsed_json['name'])
-    prod.toString()
-    inventory.append(prod)
+    for element in parsed_json:
+        print(element)
+        prod = Product(element['id'], element['name'])
+        prod.toString()
+        inventory.append(prod)
 
     if form.validate_on_submit():
 
