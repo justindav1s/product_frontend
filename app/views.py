@@ -21,7 +21,7 @@ def index():
 
     #r = http.request('GET', 'http://productsrv:8080/product/')
 
-    url = 'http://product-backend/product/'
+    url = 'http://product-backend:8080/product/'
     print("URL : ", url)
 
     r = http.request('GET', url)
