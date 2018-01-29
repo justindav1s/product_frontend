@@ -5,7 +5,6 @@ from app import app
 from .forms import ProductForm
 from .model import Product
 
-inventory = []
 http = urllib3.PoolManager()
 
 @app.route('/', methods=['GET'])
