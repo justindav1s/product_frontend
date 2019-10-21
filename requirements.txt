@@ -18,5 +18,5 @@ query-string==0.0.28
 request==0.0.26
 urllib3==1.22
 urlopen==1.0.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 WTForms==2.1
