@@ -16,7 +16,7 @@ post==0.0.26
 public==0.0.65
 query-string==0.0.28
 request==0.0.26
-urllib3==1.22
+urllib3==1.26.5
 urlopen==1.0.0
 Werkzeug==0.14.1
 WTForms==2.1
